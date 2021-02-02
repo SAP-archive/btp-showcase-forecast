@@ -1,0 +1,52 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "PAL_PARAMETER_TBL",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "PAL_PARAMETER_TBL.csv",
+                "has_header": true
+            }
+        },
+        {
+            "import_settings" : {
+                "import_columns" : [ 
+                    "DAY","MONTH","YEAR","WEEKDAY","WEEKNUM","WEEKEND_YN","HOUR","MINUTE","EN_CONS"
+                ]
+            },
+            "target_table": "ENERGY_CONSUMPTION_TEST_20",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "ENERGY_CONSUMPTION_TEST_20.csv",
+                "has_header": true
+            }
+        },
+        {
+            "import_settings" : {
+                "import_columns" : [ 
+                    "DAY","MONTH","YEAR","WEEKDAY","WEEKNUM","WEEKEND_YN","HOUR","MINUTE","EN_CONS"
+                ]
+            },
+            "target_table": "ENERGY_CONSUMPTION_TRAINING_80",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "ENERGY_CONSUMPTION_TRAINING_80.csv",
+                "has_header": true
+            }
+        },
+        {
+            "import_settings" : {
+                "import_columns" : [ 
+                    "ID","DAY","MONTH","YEAR","WEEKDAY","WEEKNUM","WEEKEND_YN","HOUR","MINUTE"
+                ]
+            },
+            "target_table": "ENERGY_CONSUMPTION_FORECAST_INPUT",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "ENERGY_CONSUMPTION_FORECAST_INPUT.csv",
+                "has_header": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+FUNCTION "ENERGY_CONSUMPTION_FORECAST_FT"( )
+    RETURNS TABLE ( "ID"    INTEGER,
+                    "VALUE" DOUBLE)
+    LANGUAGE SQLSCRIPT 
+    SQL SECURITY INVOKER AS 
+BEGIN 
+    /*****************************
+        Write your function logic
+    ****************************/
+
+    TrainData = select 
+                    "DAY",
+                    "MONTH",
+                    "YEAR",
+                    "WEEKDAY",
+                    "WEEKNUM",
+                    "WEEKEND_YN",
+                    "HOUR",
+                    "MINUTE",
+                    "EN_CONS"
+                from "ENERGY_CONSUMPTION_TRAINING_80";
+ 				
+ 	par = select 
+			"PARAM_NAME",
+			"INT_VALUE",
+			"DOUBLE_VALUE",
+			"STRING_VALUE"
+			from "PAL_PARAMETER_TBL";
+	
+	PreData = SELECT  
+                "ID",
+                "DAY",
+                "MONTH",
+                "YEAR",
+                "WEEKDAY",
+                "WEEKNUM",
+                "WEEKEND_YN",
+                "HOUR",
+                "MINUTE"
+               FROM "ENERGY_CONSUMPTION_FORECAST_INPUT";
+
+	CALL 
+	"PAL::PAL_EXPONENTIAL_REGRESSION"(:TrainData,:par,coff,V2,V3,V4);
+ 
+ 	CALL 
+    "PAL::PAL_EXPONENTIAL_REGRESSION_PREDICT"(:PreData, :coff, :par, Res);
+
+	RETURN select "ID", "VALUE" from :Res;
+
+END;

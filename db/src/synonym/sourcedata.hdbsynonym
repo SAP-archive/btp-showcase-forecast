@@ -1,0 +1,14 @@
+{
+  "PAL::PAL_EXPONENTIAL_REGRESSION": {
+    "target": {
+      "object": "PAL_EXPONENTIAL_REGRESSION",
+      "schema": "_SYS_AFL"
+    }
+  },
+    "PAL::PAL_EXPONENTIAL_REGRESSION_PREDICT": {
+    "target": {
+      "object": "PAL_EXPONENTIAL_REGRESSION_PREDICT",
+      "schema": "_SYS_AFL"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "UPS-BTP-SHOWCASE-FORECAST": {
+        "object_owner": {
+            "roles": [
+                "sourcedata::external_access_g#"
+            ]
+        },
+        "application_user": {
+            "roles": [
+                "sourcedata::external_access"
+            ]
+        }
+    }
+}

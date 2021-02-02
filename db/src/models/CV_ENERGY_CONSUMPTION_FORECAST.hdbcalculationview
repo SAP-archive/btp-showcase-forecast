@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_ENERGY_CONSUMPTION_FORECAST" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_ENERGY_CONSUMPTION_FORECAST"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="ENERGY_CONSUMPTION_FORECAST_INPUT">
+    <resourceUri>ENERGY_CONSUMPTION_FORECAST_INPUT</resourceUri>
+  </DataSource>
+  <DataSource id="ENERGY_CONSUMPTION_FORECAST_FT" type="TABLE_FUNCTION">
+    <resourceUri>ENERGY_CONSUMPTION_FORECAST_FT</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="DAY" aggregationType="sum"/>
+      <viewAttribute id="MONTH" aggregationType="sum"/>
+      <viewAttribute id="YEAR" aggregationType="sum"/>
+      <viewAttribute id="WEEKDAY" aggregationType="sum"/>
+      <viewAttribute id="WEEKNUM" aggregationType="sum"/>
+      <viewAttribute id="WEEKEND_YN" aggregationType="sum"/>
+      <viewAttribute id="HOUR" aggregationType="sum"/>
+      <viewAttribute id="MINUTE" aggregationType="sum"/>
+      <viewAttribute id="VALUE" aggregationType="sum"/>
+      <viewAttribute hidden="true" id="JOIN$ID$ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="ENERGY_CONSUMPTION_FORECAST_INPUT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAY" source="DAY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MONTH" source="MONTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEKDAY" source="WEEKDAY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEKNUM" source="WEEKNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEKEND_YN" source="WEEKEND_YN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOUR" source="HOUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MINUTE" source="MINUTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID$ID" source="ID"/>
+    </input>
+    <input node="ENERGY_CONSUMPTION_FORECAST_FT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALUE" source="VALUE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID$ID" source="ID"/>
+    </input>
+    <joinAttribute name="JOIN$ID$ID"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="Day" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Day"/>
+      <keyMapping columnObjectName="Join_1" columnName="DAY"/>
+    </attribute>
+    <attribute id="Month" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Month"/>
+      <keyMapping columnObjectName="Join_1" columnName="MONTH"/>
+    </attribute>
+    <attribute id="Year" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Year"/>
+      <keyMapping columnObjectName="Join_1" columnName="YEAR"/>
+    </attribute>
+    <attribute id="Weekday" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Week day"/>
+      <keyMapping columnObjectName="Join_1" columnName="WEEKDAY"/>
+    </attribute>
+    <attribute id="Weeknum" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Week number"/>
+      <keyMapping columnObjectName="Join_1" columnName="WEEKNUM"/>
+    </attribute>
+    <attribute id="Weekend_YN" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Is weekend? (Y/N)"/>
+      <keyMapping columnObjectName="Join_1" columnName="WEEKEND_YN"/>
+    </attribute>
+    <attribute id="Hour" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Hour"/>
+      <keyMapping columnObjectName="Join_1" columnName="HOUR"/>
+    </attribute>
+    <attribute id="Minute" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minute"/>
+      <keyMapping columnObjectName="Join_1" columnName="MINUTE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="EnergyConsumptionForecast" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Energy Consumption (Forecast)"/>
+      <measureMapping columnObjectName="Join_1" columnName="VALUE"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    {shape_greg_time}
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="90" y="229"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="ENERGY_CONSUMPTION_FORECAST_INPUT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="163" y="150"/>
+      <rectangleSize width="326"/>
+    </shape>
+    <shape modelObjectName="ENERGY_CONSUMPTION_FORECAST_FT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="305"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
