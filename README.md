@@ -24,14 +24,13 @@ No know issues identified.
 
 ## How to obtain support
 
-For additional support, please post in the related blog, specified in the "Description" session of this document.
+[Create an issue](https://github.com/SAP-samples/btp-showcase-forecast/issues) in this repository if you find a bug or have questions about the content.
+ 
+For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
  
 ## Contributing
 
-Feel free to contribute commenting in the related blog, specified in the "Description" session of this document.
-
-## To-Do (upcoming changes)
-No To-Do's planned.
+Feel free to comment in the [SAP Business Technology Platform Showcase – Overall End-to-End Demo](https://blogs.sap.com/2021/01/27/sap-business-technology-platform-showcase-overall-end-to-end-demo/) blog.
 
 ## License
 Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
