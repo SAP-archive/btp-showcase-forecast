@@ -24,11 +24,11 @@ No know issues identified.
 
 ## How to obtain support
 
-For additional support, please post in the related blog, specified in the "Title" session of this document.
+For additional support, please post in the related blog, specified in the "Description" session of this document.
  
 ## Contributing
 
-Feel free to contribute commenting in the related blog, specified in the "Title" session of this document.
+Feel free to contribute commenting in the related blog, specified in the "Description" session of this document.
 
 ## To-Do (upcoming changes)
 No To-Do's planned.
