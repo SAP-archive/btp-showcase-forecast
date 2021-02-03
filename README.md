@@ -1,6 +1,6 @@
-# Description
+# SAP Business Technology Platform Showcase, Part 4:  Run future sales prediction using SAP HANA Cloud Machine Learning algorithms
 
-SAP Business Technology Platform Showcase - Energy Production Optimization E2E Demo - Forecast db using PAL
+# Description
 
 This project shows how to run future sales prediction using SAP HANA Cloud Machine Learning algorithms: how to create an SAP HANA Cloud HDI container, load training and testing historical sales data, and run Predictive Analytic Library (PAL) procedures for just-in-time predicting future sales values.
 
