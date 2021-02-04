@@ -6,13 +6,13 @@ modules:
   type: hdb
   path: db
   requires:
-  - name: hdi_db
+  - name: btp-showcase-forecast
     properties:
       TARGET_CONTAINER: ~{hdi-container-name}
   # UPS for PAL
   - name: UPS-BTP-SHOWCASE-FORECAST      
 resources:
-- name: hdi_db
+- name: btp-showcase-forecast
   type: com.sap.xs.hdi-container
   parameters:
     config:
