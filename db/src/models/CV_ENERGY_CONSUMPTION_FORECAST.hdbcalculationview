@@ -103,11 +103,11 @@
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="ENERGY_CONSUMPTION_FORECAST_INPUT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="163" y="150"/>
+      <upperLeftCorner x="362" y="191"/>
       <rectangleSize width="326"/>
     </shape>
     <shape modelObjectName="ENERGY_CONSUMPTION_FORECAST_FT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
+      <upperLeftCorner x="248" y="21"/>
       <rectangleSize width="305"/>
     </shape>
   </shapes>

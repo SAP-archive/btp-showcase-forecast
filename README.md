@@ -1,4 +1,6 @@
-# SAP Business Technology Platform Showcase, Part 4:  Run future sales prediction using SAP HANA Cloud Machine Learning algorithms
+# SAP Business Technology Platform Showcase:  Run future sales prediction using SAP HANA Cloud Machine Learning algorithms
+
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-showcase-forecast)](https://api.reuse.software/info/github.com/SAP-samples/btp-showcase-forecast)
 
 # Description
 
